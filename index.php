@@ -29,10 +29,15 @@ require_once("config.php");
 // echo $aluno;
 
 //FAZ O UPDATE
-$usuario = new Usuario();
-$usuario->loadById(8);
+// $usuario = new Usuario();
+// $usuario->loadById(8);
+// $usuario->update("aluno", "senha");
+// echo $usuario;
 
-$usuario->update("aluno", "senha");
+//FAZ O DELETE DO USUARIOS
+$usuario = new Usuario();
+$usuario->loadById(5);
+$usuario->delete();
 echo $usuario;
 
 ?>

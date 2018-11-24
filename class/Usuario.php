@@ -110,6 +110,20 @@
             ));
         }
 
+        //DELETAR USUARIO
+        public function delete(){
+            $sql = new Sql();
+
+            $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+                ":ID"=>$this->getIdUsuario()
+            ));
+
+            $this->setIdUsuario(0);
+            $this->setLogin("");
+            $this->setSenha("");
+            $this->setDtCadastro(new DateTime());
+        }
+
         public function setDados($dados){
             $this->setIdUsuario($dados["idusuario"]);
             $this->setLogin($dados["login"]);
